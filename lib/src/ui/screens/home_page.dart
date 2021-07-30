@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
           children: [
             _buildTagLineBackground(size: _size, style: _style),
             const SizedBox(height: 8.0),
-            CompanyStatsContainer()
+            CompanyStatsCards()
           ],
         ),
       ),

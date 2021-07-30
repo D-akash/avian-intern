@@ -2,29 +2,29 @@ import 'package:flutter/material.dart';
 
 import '../../../constants/colors.dart';
 
-class CompanyStatsContainer extends StatelessWidget {
-  const CompanyStatsContainer({Key? key}) : super(key: key);
+class CompanyStatsCards extends StatelessWidget {
+  const CompanyStatsCards({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        _buildContainer(
+        _buildCard(
             color: kClientAndRetentionStatContainerColor,
             textColor: kClientAndRetentionStatContainerTextColor,
             label: "CLIENTS",
             stats: "30+"),
-        _buildContainer(
+        _buildCard(
             color: kProjectAndTeamStatContainerColor,
             textColor: kProjectAndTeamStatContainerTextColor,
             label: "PROJECTS",
             stats: "50+"),
-        _buildContainer(
+        _buildCard(
             color: kClientAndRetentionStatContainerColor,
             textColor: kClientAndRetentionStatContainerTextColor,
             label: "RETENTION",
             stats: "75%"),
-        _buildContainer(
+        _buildCard(
             color: kProjectAndTeamStatContainerColor,
             textColor: kProjectAndTeamStatContainerTextColor,
             label: "TEAM",
@@ -33,7 +33,7 @@ class CompanyStatsContainer extends StatelessWidget {
     );
   }
 
-  Widget _buildContainer({
+  Widget _buildCard({
     required Color color,
     required String label,
     required String stats,
@@ -43,23 +43,28 @@ class CompanyStatsContainer extends StatelessWidget {
     final _labelStyle = TextStyle(color: textColor, fontSize: 18.0);
 
     return Container(
-      margin: const EdgeInsets.only(bottom: 4.0),
       width: double.infinity,
-      height: 120.0,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            stats,
-            style: _statStyle,
-          ),
-          Text(
-            label,
-            style: _labelStyle,
-          ),
-        ],
+      height: 140.0,
+      child: Card(
+        elevation: 6.0,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12.0),
+        ),
+        color: color,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              stats,
+              style: _statStyle,
+            ),
+            Text(
+              label,
+              style: _labelStyle,
+            ),
+          ],
+        ),
       ),
-      decoration: BoxDecoration(color: color),
     );
   }
 }
