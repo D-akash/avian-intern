@@ -46,8 +46,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
   BottomNavigationBar _buildBottomNavigationBar() {
     return BottomNavigationBar(
-      selectedItemColor: Colors.black,
-      unselectedItemColor: Colors.grey,
+      selectedItemColor: Colors.blue,
+      unselectedItemColor: Colors.blue[200],
       currentIndex: _currentItem,
       iconSize: 30.0,
       elevation: 6.0,
