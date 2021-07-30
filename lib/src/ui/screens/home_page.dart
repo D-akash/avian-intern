@@ -55,7 +55,7 @@ class HomePage extends StatelessWidget {
                   style: style.copyWith(color: Colors.blue[200]),
                 ),
                 TextSpan(
-                  text: kHomePageTagLineThird,
+                  text: kAboutUsPageInfoTitleText,
                 )
               ],
             ),
